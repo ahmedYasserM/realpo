@@ -1,6 +1,7 @@
 "use client";
 import React, { useContext } from "react";
 import { ThemeContext } from "@/context/ThemeContext";
+import { cn } from "@/lib/utils";
 
 type ThemeProviderProps = {
   children: React.ReactNode;
@@ -13,8 +14,10 @@ export default function ThemeProvider({
 
   return (
     <div
-      className={`${theme.theme} min-h-screen`}
-      style={{ backgroundColor: "var(--mantle)" }}
+      className={cn(
+        theme.theme,
+        "min-h-dvh min-w-full container bg-background",
+      )}
     >
       {children}
     </div>

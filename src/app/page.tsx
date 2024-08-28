@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button";
+import NewPost from "@/components/NewPost";
+import Tiptap from "@/components/Tiptap";
 
 export default function Home() {
   return (
-    <div>
-      Hello, world
-      <Button>Click Me</Button>
+    <div className="pt-14">
+      <NewPost />
     </div>
   );
 }
