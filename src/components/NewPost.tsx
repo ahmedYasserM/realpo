@@ -47,12 +47,13 @@ export default function NewPost(): React.JSX.Element {
             <Input
               type="text"
               id="title"
+              value={title}
               name="title"
               placeholder="Enter post title..."
               onChange={handleTitleChange}
             />
           </div>
-          <Tiptap onChange={setContent} />
+          <Tiptap onChange={setContent} content={content} />
           <Button
             variant="secondary"
             size="default"

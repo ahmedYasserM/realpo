@@ -9,5 +9,14 @@ export default async function PostPage({ params }: PostPageProps) {
   const post = await fetchPost(slug);
   console.log(post);
 
-  return <div className="text-white">Post Page {slug}</div>;
+  if (post.success === false) {
+    return <div>Failed to fetch post</div>;
+  }
+
+  return (
+    <div className="text-foreground mt-8 flex flex-col gap-4">
+      <h1 className="text-3xl">{post.post!.title}</h1>
+      <p dangerouslySetInnerHTML={{ __html: post.post!.content }}></p>
+    </div>
+  );
 }

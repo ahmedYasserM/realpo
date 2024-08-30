@@ -11,6 +11,12 @@ export default function Header(): React.JSX.Element {
   return (
     <nav className="h-20 border-b border-border container flex items-center justify-between">
       <SocialLinks />
+      <button
+        className="text-4xl text-foreground font-bold"
+        onClick={() => router.push("/")}
+      >
+        Realpo
+      </button>
       <div>
         {status === "authenticated" ? (
           <Button

@@ -67,9 +67,10 @@ function MenuBar(): React.JSX.Element | null {
 
 type TiptapProps = {
   onChange: (content: string) => void;
+  content: string;
 };
 
-export default function Tiptap({ onChange }: TiptapProps): React.JSX.Element {
+export default function Tiptap({ onChange, content }: TiptapProps): React.JSX.Element {
   const extensions = [StarterKit, Underline, CodeBlock];
 
   return (
@@ -77,6 +78,7 @@ export default function Tiptap({ onChange }: TiptapProps): React.JSX.Element {
       <EditorProvider
         slotBefore={<MenuBar />}
         extensions={extensions}
+        content={content}
         editorProps={{
           attributes: {
             class:
