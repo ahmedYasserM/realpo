@@ -1,3 +1,5 @@
+import CommentsInput from "@/components/CommentsInput";
+import CommentsList from "@/components/CommentsList";
 import { fetchPost } from "@/lib/actions";
 
 type PostPageProps = {
@@ -17,6 +19,11 @@ export default async function PostPage({ params }: PostPageProps) {
     <div className="text-foreground mt-8 flex flex-col gap-4">
       <h1 className="text-3xl">{post.post!.title}</h1>
       <p dangerouslySetInnerHTML={{ __html: post.post!.content }}></p>
+
+      <div className="border-t-4 p-4 border-border flex flex-col">
+        <CommentsInput slug={slug} />
+        <CommentsList />
+      </div>
     </div>
   );
 }

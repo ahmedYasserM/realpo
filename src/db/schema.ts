@@ -107,7 +107,7 @@ export const comments = pgTable("comment", {
     .primaryKey()
     .$defaultFn(() => crypto.randomUUID()),
   content: text("content"),
-  createdAt: timestamp("createdAt", { mode: "date" }).notNull(),
+  createdAt: timestamp("createdAt", { mode: "date" }).notNull().defaultNow(),
   userEmail: text("userEmail")
     .notNull()
     .references(() => users.email),

@@ -17,9 +17,9 @@ export default function Post({
   slug,
 }: PostProps): React.JSX.Element {
   return (
-    <div className=" border border-border bg-card text-card-foreground mt-10 p-4 rounded-lg lg:w-[895px] mx-auto flex flex-col gap-4">
+    <div className=" border border-border bg-card text-card-foreground mt-10 p-4 rounded-lg lg:w-[895px] mx-auto flex flex-col gap-4 flex-wrap">
       <div className="flex gap-1 flex-col sm:flex-row sm:items-center sm:gap-5">
-        <h1 className="text-3xl whitespace-nowrap">{title}</h1>
+        <h1 className="text-3xl ">{title}</h1>
 
         <div className="flex gap-2">
           <Badge>{author.split("@")[0]}</Badge>

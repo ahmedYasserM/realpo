@@ -21,7 +21,7 @@ const socialLinks = [
 
 export default function SocialLinks(): React.JSX.Element {
   return (
-    <div className="flex gap-4 items-center">
+    <div className="flex gap-3 items-center hidden sm:flex">
       {socialLinks.map((socialLink) => {
         return (
           <>
