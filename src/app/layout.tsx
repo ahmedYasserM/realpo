@@ -4,6 +4,9 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/providers/ThemeProvider";
+import AuthProvider from "@/providers/AuthProvider";
+import QueryProvider from "@/providers/QueryProvider";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -21,15 +24,23 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable,
+          "min-h-screen bg-background text-foreground font-sans antialiased",
+          inter.variable
         )}
       >
-        <ThemeContextProvider>
-          <ThemeProvider>
-            <main className="min-h-dvh container">{children}</main>
-          </ThemeProvider>
-        </ThemeContextProvider>
+        <QueryProvider>
+          <AuthProvider>
+            <ThemeContextProvider>
+              <ThemeProvider>
+              <Header />
+                <main className="min-h-dvh container">{children}</main>
+                <footer className="text-center py-4 mt-2 text-muted-foreground">
+                  &copy;2024. All rights reserved
+                </footer>
+              </ThemeProvider>
+            </ThemeContextProvider>
+          </AuthProvider>
+        </QueryProvider>
       </body>
     </html>
   );

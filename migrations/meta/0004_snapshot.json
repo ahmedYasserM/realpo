@@ -1,6 +1,6 @@
 {
-  "id": "a3b41a11-0ff6-4f10-8739-c462b8464677",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "74d7fc9a-d09c-4945-8cc4-b2bea9f862d5",
+  "prevId": "a6aa7a47-e84c-4e61-a6fd-aab04fa620ec",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -212,8 +212,8 @@
           "primaryKey": false,
           "notNull": true
         },
-        "userId": {
-          "name": "userId",
+        "userEmail": {
+          "name": "userEmail",
           "type": "text",
           "primaryKey": false,
           "notNull": true
@@ -227,15 +227,15 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "comment_userId_user_id_fk": {
-          "name": "comment_userId_user_id_fk",
+        "comment_userEmail_user_email_fk": {
+          "name": "comment_userEmail_user_email_fk",
           "tableFrom": "comment",
           "tableTo": "user",
           "columnsFrom": [
-            "userId"
+            "userEmail"
           ],
           "columnsTo": [
-            "id"
+            "email"
           ],
           "onDelete": "no action",
           "onUpdate": "no action"
@@ -283,7 +283,8 @@
           "name": "createdAt",
           "type": "timestamp",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": "now()"
         },
         "slug": {
           "name": "slug",
@@ -291,8 +292,8 @@
           "primaryKey": false,
           "notNull": true
         },
-        "userId": {
-          "name": "userId",
+        "userEmail": {
+          "name": "userEmail",
           "type": "text",
           "primaryKey": false,
           "notNull": true
@@ -300,15 +301,15 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "post_userId_user_id_fk": {
-          "name": "post_userId_user_id_fk",
+        "post_userEmail_user_email_fk": {
+          "name": "post_userEmail_user_email_fk",
           "tableFrom": "post",
           "tableTo": "user",
           "columnsFrom": [
-            "userId"
+            "userEmail"
           ],
           "columnsTo": [
-            "id"
+            "email"
           ],
           "onDelete": "no action",
           "onUpdate": "no action"

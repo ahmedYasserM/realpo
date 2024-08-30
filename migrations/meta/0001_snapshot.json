@@ -1,6 +1,6 @@
 {
-  "id": "a3b41a11-0ff6-4f10-8739-c462b8464677",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "53f921fa-588a-4637-ac0f-8a06dc4dfdf1",
+  "prevId": "a3b41a11-0ff6-4f10-8739-c462b8464677",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -283,7 +283,8 @@
           "name": "createdAt",
           "type": "timestamp",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": "now()"
         },
         "slug": {
           "name": "slug",

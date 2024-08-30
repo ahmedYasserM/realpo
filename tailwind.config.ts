@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config = {
   darkMode: ["class"],
@@ -20,6 +21,7 @@ const config = {
     },
     screens: {
       mobile: "375px",
+      ...defaultTheme.screens,
     },
     extend: {
       fontFamily: {

@@ -66,12 +66,10 @@ function MenuBar(): React.JSX.Element | null {
 }
 
 type TiptapProps = {
-  updateHandler: (editor: any) => void;
+  onChange: (content: string) => void;
 };
 
-export default function Tiptap({
-  updateHandler,
-}: TiptapProps): React.JSX.Element {
+export default function Tiptap({ onChange }: TiptapProps): React.JSX.Element {
   const extensions = [StarterKit, Underline, CodeBlock];
 
   return (
@@ -86,7 +84,7 @@ export default function Tiptap({
           },
         }}
         onUpdate={({ editor }) => {
-          updateHandler(editor.getHTML());
+          onChange(editor.getHTML());
         }}
       ></EditorProvider>
     </div>
